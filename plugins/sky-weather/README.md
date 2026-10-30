@@ -4,6 +4,8 @@ Based on [ant456 Sky Weather](https://github.com/ant456/ledmatrix-plugins/tree/m
 
 **Installation**: install from this plugin directory in LEDMatrix, then configure `ha_url`, `ha_token`, and `weather_entity` in the plugin UI. `test_mode: true` allows weather animations without HA; turn it off afterward. Native display must be at least 128x32.
 
+**Live preview:** Open [preview.html](preview.html) locally in your browser for a self-contained interactive 320×32 layout simulator. It updates instantly as you change layout, dimensions, page, condition, and temperature, without needing a Home Assistant connection. This is a **layout simulator**, not pixel-exact Python rendering or a widget embedded in LEDMatrix's production settings page. For the **actual plugin renderer** use the LEDMatrix core `python scripts/dev_server.py --extra-dir /path/to/this/repo/plugins/sky-weather` and open `http://localhost:5001`, select `sky-weather`, turn on `test_mode`, and select 320×32. Its config form updates the Python-rendered preview automatically.
+
 **Limitations**: sidebar is a compact overview and not a full 320-pixel redesign of each page. There is no built-in live settings preview in this revision. Validate with your LEDMatrix core and actual five-panel wiring before relying on production rotation.
 
 ---
