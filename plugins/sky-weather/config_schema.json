@@ -244,6 +244,13 @@
       ],
       "default": "dashboard",
       "description": "Wide panel: dashboard adds live readable sidebars around the original pixel art; center preserves the original centered view"
+    },
+    "live_preview": {
+      "type": "string",
+      "title": "Interactive five-panel preview",
+      "default": "preview",
+      "x-widget": "sky-weather-live",
+      "description": "Shows a simulated display in these settings and refreshes before saving. For pixel-identical rendering, use the LEDMatrix developer preview server."
     }
   }
 }
