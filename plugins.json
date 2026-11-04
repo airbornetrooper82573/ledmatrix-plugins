@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-10-21",
+  "last_updated": "2026-11-04",
   "plugins": [
     {
       "id": "cricket-scoreboard",
@@ -1484,6 +1484,34 @@
       "screenshot": "",
       "latest_version": "1.9.0",
       "ledmatrix_min_version": "2.0.0"
+    },
+    {
+      "id": "nfl-live-field",
+      "name": "NFL Live Field",
+      "description": "An arcade-style NFL show with live games, animated field action, player cards, recently finished games, upcoming matchups, favorite-team filtering, and ESPN public scoreboard data with no API key.",
+      "author": "ant456",
+      "category": "sports",
+      "tags": [
+        "nfl",
+        "football",
+        "live",
+        "scoreboard",
+        "favorites",
+        "arcade",
+        "player-cards",
+        "schedule"
+      ],
+      "repo": "https://github.com/airbornetrooper82573/ledmatrix-plugins",
+      "branch": "main",
+      "plugin_path": "plugins/nfl-live-field",
+      "stars": 0,
+      "downloads": 0,
+      "last_updated": "2026-10-30",
+      "verified": false,
+      "screenshot": "",
+      "latest_version": "1.3.4",
+      "ledmatrix_min_version": "3.0.0",
+      "commit": "5d8ee975fdf6fc46a22f95005f94f98aa5334280"
     }
   ]
 }
