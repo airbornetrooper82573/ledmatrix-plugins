@@ -254,10 +254,10 @@
       "plugin_path": "",
       "stars": 0,
       "downloads": 0,
-      "last_updated": "2026-10-12",
+      "last_updated": "2026-11-01",
       "verified": false,
       "screenshot": "",
-      "latest_version": "1.11.0",
+      "latest_version": "1.12.1",
       "ledmatrix_min_version": "2.0.0"
     },
     {
@@ -1454,10 +1454,10 @@
       "plugin_path": "",
       "stars": 0,
       "downloads": 0,
-      "last_updated": "2026-10-20",
+      "last_updated": "2026-10-31",
       "verified": false,
       "screenshot": "",
-      "latest_version": "1.6.1",
+      "latest_version": "1.6.5",
       "ledmatrix_min_version": "2.0.0"
     },
     {
@@ -1479,16 +1479,16 @@
       "plugin_path": "",
       "stars": 0,
       "downloads": 0,
-      "last_updated": "2026-09-09",
+      "last_updated": "2026-10-31",
       "verified": false,
       "screenshot": "",
-      "latest_version": "1.9.0",
+      "latest_version": "1.9.1",
       "ledmatrix_min_version": "2.0.0"
     },
     {
       "id": "nfl-live-field",
       "name": "NFL Live Field",
-      "description": "An arcade-style NFL show with live games, animated field action, player cards, recently finished games, upcoming matchups, favorite-team filtering, and ESPN public scoreboard data with no API key.",
+      "description": "An arcade-style NFL show with three modes: live games (animated field, player cards with ESPN headshots and rarity frames, touchdown bursts with confetti), recently finished games (final score plus the same stat cards), and upcoming games (matchup and kickoff time). Pick favorite teams and switch on the favorites lock to show only their games in every mode. ESPN's public scoreboard, no API key.",
       "author": "ant456",
       "category": "sports",
       "tags": [
@@ -1510,8 +1510,9 @@
       "verified": false,
       "screenshot": "",
       "latest_version": "1.3.4",
-      "ledmatrix_min_version": "3.0.0",
-      "commit": "5d8ee975fdf6fc46a22f95005f94f98aa5334280"
+      "ledmatrix_min_version": "2.0.0",
+      "commit": "5d8ee975fdf6fc46a22f95005f94f98aa5334280",
+      "icon": "fas fa-football"
     }
   ]
 }
