@@ -1,0 +1,74 @@
+name: Sync NFL Live Field from ant456
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-nfl-live-field
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this plugin registry
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout creator repository
+        uses: actions/checkout@v4
+        with:
+          repository: ant456/ledmatrix-plugins
+          ref: main
+          path: upstream
+          sparse-checkout: |
+            nfl-live-field
+          sparse-checkout-cone-mode: false
+
+      - name: Mirror NFL Live Field exactly
+        shell: bash
+        run: |
+          rm -rf plugins/nfl-live-field
+          mkdir -p plugins/nfl-live-field
+          cp -a upstream/nfl-live-field/. plugins/nfl-live-field/
+          rm -rf upstream
+
+      - name: Commit creator updates
+        id: plugin_changes
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A plugins/nfl-live-field
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Sync nfl-live-field from ant456/ledmatrix-plugins"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Refresh plugin registry
+        if: steps.plugin_changes.outputs.changed == 'true'
+        run: python update_registry.py --external
+
+      - name: Commit registry refresh
+        if: steps.plugin_changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git add plugins.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update registry for nfl-live-field"
+          fi
+
+      - name: Push changes
+        if: steps.plugin_changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git pull --rebase origin main
+          git push origin main
